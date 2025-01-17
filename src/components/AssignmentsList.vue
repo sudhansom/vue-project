@@ -1,26 +1,33 @@
 <template>
   <section>
-    <header>
-      <h2>
-        All Assignments
-      </h2>
-    </header>
-    <div>
-      <ul>
-        <li v-for="assignment in assignments" :key="assignment.id">
-            {{ assignment.title}}
-            <input type="checkbox" v-model="assignment.completed"></input>
-        </li>
+    <section>
+        <h4>
+        In Progress Assignments
+      </h4>
+       <ul>
+       <each-assignment v-for="assignment in assignments.filter(a => !a.completed)" :key="assignment.id" :assignment="assignment" />
       </ul>
-    </div>
+    </section>
+    <section>
+        <h4>
+        Completed Assignments
+      </h4>
+      <ul>
+       <each-assignment v-for="assignment in assignments.filter(a => a.completed)" :key="assignment.id" :assignment="assignment" />
+      </ul>
+    </section>
   </section>
  
 </template>
 
 <script setup>
+import { computed } from "vue"
+import EachAssignment from './EachAssignment.vue'
+
 defineProps({
   assignments: Array
 })
+ 
 </script>
 
 <style scoped>
