@@ -1,5 +1,6 @@
 <template>
-  <section>
+ <div class="assignments">
+     <section>
     <section>
         <h4>
         In Progress Assignments
@@ -17,6 +18,7 @@
       </ul>
     </section>
   </section>
+ </div>
  
 </template>
 
@@ -36,11 +38,18 @@ ul {
     border: 1px solid gray;
     padding: 12px;
     border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 li {
     display: flex;
     justify-content: space-between;
     gap: 12px;
+}
+.assignments {
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 24px 48px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 </style>
 
