@@ -1,19 +1,7 @@
 <script setup>
+import Assignments from "./components/Assignments.vue";
 </script>
 
 <template>
-  <section>
-    <header>
-      <h1>
-        Assignments
-      </h1>
-    </header>
-    <div>
-      <ul>
-        <li>Wake up early.</li>
-        <li>Make breakfast.</li>
-        <li>Leave for school.</li>
-      </ul>
-    </div>
-  </section>
+  <assignments />
 </template>
