@@ -7,10 +7,14 @@
     </header>
     <div>
       <ul>
-        <li v-for="assignment in assignments" :key="assignment.id">{{ assignment.title}}</li>
+        <li v-for="assignment in assignments" :key="assignment.id">
+            {{ assignment.title}}
+            <input type="checkbox" v-model="assignment.completed"></input>
+        </li>
       </ul>
     </div>
   </section>
+ 
 </template>
 
 <script setup>
@@ -18,4 +22,8 @@ defineProps({
   assignments: Array
 })
 </script>
+
+<style scoped>
+
+</style>
 
