@@ -10,7 +10,7 @@ import AssignmentsList from './AssignmentsList.vue'
 let assignments = ref([])
 
 onMounted(()=>{
-  fetch("http://localhost:3000/assignments")
+  fetch("http://localhost:3002/assignments")
   .then(response => response.json())
   .then(data => {
     assignments.value = data
