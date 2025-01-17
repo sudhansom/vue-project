@@ -14,7 +14,6 @@ onMounted(()=>{
   .then(response => response.json())
   .then(data => {
     assignments.value = data
-    console.log(data)
   })
 })
 </script>

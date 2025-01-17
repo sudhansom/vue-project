@@ -1,9 +1,9 @@
 <template>
   <section>
     <header>
-      <h1>
-        Assignments
-      </h1>
+      <h2>
+        All Assignments
+      </h2>
     </header>
     <div>
       <ul>
@@ -24,6 +24,16 @@ defineProps({
 </script>
 
 <style scoped>
-
+ul {
+    list-style-type: none;
+    border: 1px solid gray;
+    padding: 12px;
+    border-radius: 6px;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
 </style>
 
