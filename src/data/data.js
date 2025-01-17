@@ -14,4 +14,19 @@ export const assignments = [
         title: "Leave for school.",
         completed: false,
     },
+    {
+        id:4,
+        title: "Do home work",
+        completed: true,
+    },
+    {
+        id:5,
+        title: "Call the Chef.",
+        completed: false,
+    },
+    {
+        id:6,
+        title: "Write Email.",
+        completed: true,
+    },
 ]
