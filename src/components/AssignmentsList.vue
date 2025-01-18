@@ -1,9 +1,12 @@
 <template>
  <div class="assignments" v-if="assignments.length">
     <section v-if="inProgress.length">
-            <h4>
+        <h4>
             In Progress Assignments
         </h4>
+        <div class="tags">
+            <EachTag v-for="a in tags(inProgress)" :tag="a"  :key="a"></EachTag>
+        </div>
         <ul>
         <each-assignment v-for="assignment in inProgress" :key="assignment.id" :assignment="assignment" />
         </ul>
@@ -12,6 +15,9 @@
             <h4>
             Completed Assignments
         </h4>
+         <div class="tags">
+            <EachTag v-for="a in tags(completed)" :tag="a"  :key="a"></EachTag>
+        </div>
         <ul>
         <each-assignment v-for="assignment in completed" :key="assignment.id" :assignment="assignment" />
         </ul>
@@ -24,6 +30,7 @@
 import { computed } from "vue"
 import EachAssignment from './EachAssignment.vue'
 import LoadingSpinner from "./LoadingSpinner.vue";
+import EachTag from "./EachTag.vue"
 
 const { assignments } = defineProps({
   assignments: Array,
@@ -35,6 +42,10 @@ const inProgress = computed(() => {
 const completed = computed(() => {
   return assignments.filter((a) => a.completed);
 });
+
+function tags(lists){
+    return new Set(lists.map(a => a.tag))
+}
  
 </script>
 
@@ -56,6 +67,10 @@ li {
     border-radius: 12px;
     padding: 24px 48px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.tags {
+    display: flex;
+    gap: 12px;
 }
 </style>
 
