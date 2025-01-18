@@ -1,7 +1,6 @@
 <template>
- <div class="assignments">
-    <section>
-        <section v-if="inProgress.length">
+ <div class="assignments" v-if="assignments.length">
+    <section v-if="inProgress.length">
             <h4>
             In Progress Assignments
         </h4>
@@ -17,14 +16,14 @@
         <each-assignment v-for="assignment in completed" :key="assignment.id" :assignment="assignment" />
         </ul>
         </section>
-    </section>
  </div>
- 
+ <LoadingSpinner v-else> </LoadingSpinner>
 </template>
 
 <script setup>
 import { computed } from "vue"
 import EachAssignment from './EachAssignment.vue'
+import LoadingSpinner from "./LoadingSpinner.vue";
 
 const { assignments } = defineProps({
   assignments: Array,
