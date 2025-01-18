@@ -1,23 +1,23 @@
 <template>
  <div class="assignments">
-     <section>
     <section>
-        <h4>
-        In Progress Assignments
-      </h4>
-       <ul>
-       <each-assignment v-for="assignment in assignments.filter(a => !a.completed)" :key="assignment.id" :assignment="assignment" />
-      </ul>
+        <section v-if="inProgress.length">
+            <h4>
+            In Progress Assignments
+        </h4>
+        <ul>
+        <each-assignment v-for="assignment in inProgress" :key="assignment.id" :assignment="assignment" />
+        </ul>
+        </section>
+        <section v-if="completed.length">
+            <h4>
+            Completed Assignments
+        </h4>
+        <ul>
+        <each-assignment v-for="assignment in completed" :key="assignment.id" :assignment="assignment" />
+        </ul>
+        </section>
     </section>
-    <section>
-        <h4>
-        Completed Assignments
-      </h4>
-      <ul>
-       <each-assignment v-for="assignment in assignments.filter(a => a.completed)" :key="assignment.id" :assignment="assignment" />
-      </ul>
-    </section>
-  </section>
  </div>
  
 </template>
@@ -26,9 +26,16 @@
 import { computed } from "vue"
 import EachAssignment from './EachAssignment.vue'
 
-defineProps({
-  assignments: Array
-})
+const { assignments } = defineProps({
+  assignments: Array,
+});
+const inProgress = computed(() => {
+  return assignments.filter((a) => !a.completed);
+});
+
+const completed = computed(() => {
+  return assignments.filter((a) => a.completed);
+});
  
 </script>
 
