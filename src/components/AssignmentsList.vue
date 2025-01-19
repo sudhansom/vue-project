@@ -26,6 +26,8 @@ const completed = computed(() => {
 
 <style scoped>
 .assignments {
+    display:flex;
+    gap: 18px;
     border: 1px solid gray;
     border-radius: 12px;
     padding: 24px 48px;

@@ -1,25 +1,27 @@
 <template>
-    <h4>
-        In Progress Assignments
-    </h4>
-    <div class="tags">
-        <EachTag 
-        v-for="a in tags(assignments)" 
-        :tag="a"  
-        :key="a"
-        v-model="currentTag"
-        ></EachTag>
-    </div>
-    <div class="filtered" v-if="filteredAssignments().length">
-    <ul>
-        <each-assignment v-for="assignment in filteredAssignments()" :key="assignment.id" :assignment="assignment" />
-    </ul> 
-    </div>  
-    <div v-else>
+    <div class="assignment">
+        <h4>
+            In Progress Assignments
+        </h4>
+        <div class="tags">
+            <EachTag 
+            v-for="a in tags(assignments)" 
+            :tag="a"  
+            :key="a"
+            v-model="currentTag"
+            ></EachTag>
+        </div>
+        <div class="filtered" v-if="filteredAssignments().length">
         <ul>
-        <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
-    </ul> 
-    </div>   
+            <each-assignment v-for="assignment in filteredAssignments()" :key="assignment.id" :assignment="assignment" />
+        </ul> 
+        </div>  
+        <div v-else>
+            <ul>
+            <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
+        </ul> 
+        </div> 
+    </div>  
 </template>
 
 <script setup>
@@ -72,5 +74,11 @@ li {
 .tags {
     display: flex;
     gap: 12px;
+}
+.assignment {
+    border: 1px solid gray;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 </style>
