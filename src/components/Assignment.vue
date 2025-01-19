@@ -7,29 +7,33 @@
         v-for="a in tags(assignments)" 
         :tag="a"  
         :key="a"
-        :class="{active:tag==currentTag}"
-        @click="currentTag=a"
+        @changeTag="changeTag"
+        :currentTag="currentTag"
         ></EachTag>
     </div>
     <ul>
-    <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
+        <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
     </ul>      
 </template>
 
 <script setup>
-import { computed } from "vue"
+import { computed, ref } from "vue"
 import EachAssignment from './EachAssignment.vue'
 import EachTag from "./EachTag.vue"
 
-let currentTag = "all"
+let currentTag = ref("all")
 
 const { assignments } = defineProps({
   assignments: Array,
 });
 
+function changeTag(tag){
+    currentTag.value = tag
+}
+
 
 function tags(lists){
-    return new Set(lists.map(a => a.tag))
+    return ['all', ...new Set(lists.map(a => a.tag))]
 }
  
 </script>
