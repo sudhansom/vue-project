@@ -1,46 +1,46 @@
 {
-    "assignments" : [
-        {
-            "id": 1,
-            "title": "Wake up early.",
-            "completed": false,
-            "tag": "physics"
-        },
-        {
-            "id": 2,
-            "title": "Make breakfast.",
-            "completed": false,
-            "tag": "bio"
-        },
-        {
-            "id":3,
-            "title": "Leave for school.",
-            "completed": false,
-            "tag": "physics"
-        },
-        {
-            "id":4,
-            "title": "Do home work",
-            "completed": true,
-            "tag": "science"
-        },
-        {
-            "id":5,
-            "title": "Call the Chef.",
-            "completed": false,
-            "tag": "science"
-        },
-        {
-            "id":6,
-            "title": "Write Email.",
-            "completed": true,
-            "tag": "science"
-        },
-        {
-            "id":7,
-            "title": "Learn some expressions.",
-            "completed": true,
-            "tag": "maths"
-        }
-    ]
+  "assignments": [
+    {
+      "id": 1,
+      "title": "Wake up early.",
+      "completed": false,
+      "tag": "physics"
+    },
+    {
+      "id": 2,
+      "title": "Make breakfast.",
+      "completed": false,
+      "tag": "bio"
+    },
+    {
+      "id": 3,
+      "title": "Leave for school.",
+      "completed": false,
+      "tag": "physics"
+    },
+    {
+      "id": 4,
+      "title": "Do home work",
+      "completed": true,
+      "tag": "science"
+    },
+    {
+      "id": 5,
+      "title": "Call the Chef.",
+      "completed": false,
+      "tag": "science"
+    },
+    {
+      "id": 6,
+      "title": "Write Email.",
+      "completed": true,
+      "tag": "science"
+    },
+    {
+      "id": 7,
+      "title": "Learn some expressions.",
+      "completed": true,
+      "tag": "maths"
+    }
+  ]
 }
