@@ -1,9 +1,9 @@
 <template>
 <div class="assignments" v-if="assignments.length">
-    <assignment v-if="inProgress.length" :assignments="inProgress">
+    <assignment v-if="inProgress.length" :assignments="inProgress" title="In Progress Assignments">
         <assignment-create />
     </assignment>
-    <assignment v-if="completed.length" :assignments="completed"  />
+    <assignment v-if="completed.length" :assignments="completed" title="Completed Assignments" />
 </div>
 <LoadingSpinner v-else> </LoadingSpinner>
 </template>

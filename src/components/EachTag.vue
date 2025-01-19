@@ -2,7 +2,7 @@
   <div class="tag" 
         :class="{active:tag==modelValue}"
   >
-    <span @click="emit('update:modelValue', tag)">{{ tag }}</span>
+    <span @click="$emit('update:modelValue', tag)">{{ tag }}</span>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ defineProps({
     modelValue: String
 })
 
-let emit = defineEmits(['update:modelValue'])
+// let emit = defineEmits(['update:modelValue'])
 
 </script>
 

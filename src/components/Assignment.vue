@@ -2,7 +2,7 @@
     <div class="assignment">
         <section>
             <h4>
-            In Progress Assignments
+            {{ title }}
         </h4>
         <div class="tags">
             <EachTag 
@@ -36,6 +36,7 @@ let currentTag = ref("all")
 
 const { assignments } = defineProps({
   assignments: Array,
+  title: String,
 });
 
 function changeTag(tag){
