@@ -7,8 +7,7 @@
         v-for="a in tags(assignments)" 
         :tag="a"  
         :key="a"
-        @changeTag="changeTag"
-        :currentTag="currentTag"
+        v-model="currentTag"
         ></EachTag>
     </div>
     <div class="filtered" v-if="filteredAssignments().length">
@@ -46,6 +45,7 @@ function filteredAssignments(){
         if(filtered.length){
             return filtered
         }else {
+            currentTag.value = "all"
             return assignments
         }
     }

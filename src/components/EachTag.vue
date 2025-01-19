@@ -1,18 +1,18 @@
 <template>
   <div class="tag" 
-        :class="{active:tag==currentTag}"
+        :class="{active:tag==modelValue}"
   >
-    <span @click="emit('changeTag', tag)">{{ tag }}</span>
+    <span @click="emit('update:modelValue', tag)">{{ tag }}</span>
   </div>
 </template>
 
 <script setup>
 defineProps({
     tag: String,
-    currentTag: String
+    modelValue: String
 })
 
-let emit = defineEmits(['changeTag'])
+let emit = defineEmits(['update:modelValue'])
 
 </script>
 
