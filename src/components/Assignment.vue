@@ -1,6 +1,7 @@
 <template>
     <div class="assignment">
-        <h4>
+        <section>
+            <h4>
             In Progress Assignments
         </h4>
         <div class="tags">
@@ -21,6 +22,8 @@
             <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
         </ul> 
         </div> 
+        </section>
+        <slot></slot>
     </div>  
 </template>
 
