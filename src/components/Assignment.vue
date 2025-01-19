@@ -11,9 +11,16 @@
         :currentTag="currentTag"
         ></EachTag>
     </div>
+    <div class="filtered" v-if="filteredAssignments().length">
     <ul>
+        <each-assignment v-for="assignment in filteredAssignments()" :key="assignment.id" :assignment="assignment" />
+    </ul> 
+    </div>  
+    <div v-else>
+        <ul>
         <each-assignment v-for="assignment in assignments" :key="assignment.id" :assignment="assignment" />
-    </ul>      
+    </ul> 
+    </div>   
 </template>
 
 <script setup>
@@ -31,7 +38,18 @@ function changeTag(tag){
     currentTag.value = tag
 }
 
-
+function filteredAssignments(){
+    if(currentTag.value==="all"){
+        return assignments
+    }else {
+        let filtered = assignments.filter(a => a.tag == currentTag.value)
+        if(filtered.length){
+            return filtered
+        }else {
+            return assignments
+        }
+    }
+}
 function tags(lists){
     return ['all', ...new Set(lists.map(a => a.tag))]
 }
