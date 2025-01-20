@@ -1,18 +1,23 @@
 <template>
     <div class="input-card">
         <input type="text" v-model="task">
-        <button @click="saveTask">Save</button>
+        <button @click="saveTask">Save {{ number }}</button>
     </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { onMounted, ref } from "vue"
+
+defineProps({
+    tag: String,
+    number: Number,
+})
 
 let task = ref("")
 
 async function saveTask(){
     let data = {
-        id:44,
+        id:8,
         title: task.value,
         completed: false,
         tag: 'tag'

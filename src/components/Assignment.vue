@@ -23,7 +23,7 @@
         </ul> 
         </div> 
         </section>
-        <slot></slot>
+        <slot :message="currentTag"></slot>
     </div>  
 </template>
 

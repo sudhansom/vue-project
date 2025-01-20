@@ -1,7 +1,7 @@
 <template>
 <div class="assignments" v-if="assignments.length">
-    <assignment  v-if="inProgress.length" :assignments="inProgress" title="In Progress Assignments">
-        <assignment-create />
+    <assignment v-slot="{message}" v-if="inProgress.length" :assignments="inProgress" title="In Progress Assignments">
+        <assignment-create :tag="message" :number="assignments.length + 1" />
     </assignment>
     <assignment v-if="completed.length" :assignments="completed" title="Completed Assignments" />
 </div>
